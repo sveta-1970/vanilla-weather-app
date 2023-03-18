@@ -1,0 +1,124 @@
+body {
+  height: 100vh;
+}
+h1 {
+  margin-top: 50px;
+  margin-bottom: 0;
+  font-size: 45px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+small {
+  font-size: smaller;
+}
+small > a {
+  text-decoration: none;
+}
+small > a:hover {
+  text-decoration: underline;
+}
+
+.weather-app-wrapper {
+  margin: 20px auto;
+  max-width: 650px;
+}
+
+.weather-app {
+  /*max-width: 650px;
+   margin-top: 20px auto; */
+  border: 1 solid #5669de;
+  border-radius: 10px;
+  padding: 20px;
+
+  color: #f8f59b;
+  background: radial-gradient(
+    circle at 12.3% 19.3%,
+    rgb(85, 88, 218) 0%,
+    rgb(95, 209, 249) 100.2%
+  );
+}
+
+.first {
+  padding-left: 15px;
+}
+
+[placeholder] {
+  font-size: 14px;
+  padding-left: 15px;
+}
+.type-city {
+  border-radius: 30px;
+  border: none;
+  width: 100%;
+  line-height: 40px;
+}
+
+.search-icon {
+  font-size: 32px;
+  margin: 6px 0;
+  color: #f8f59b;
+}
+
+.button-form,
+.button-current {
+  background: transparent;
+  border: none;
+}
+
+.first div:nth-child(1),
+.second > div,
+.third > div {
+  padding: 0;
+}
+
+.first div:nth-child(2) {
+  text-align: right;
+}
+.first div:nth-child(3) {
+  text-align: center;
+}
+
+.second {
+  margin-bottom: 50px;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.second div:nth-child(2),
+.second div:nth-child(3) {
+  text-align: right;
+}
+.cloud-icon {
+  font-size: 70px;
+  margin-right: 10px;
+}
+
+.units {
+  position: relative;
+  top: -34px;
+  font-size: 20px;
+}
+.units a {
+  text-decoration: none;
+  color: #f8f59b;
+}
+
+.third p {
+  text-align: center;
+  line-height: 32px;
+  margin-bottom: 0;
+}
+.third i {
+  font-size: 40px;
+}
+#main-temperature {
+  font-size: 70px;
+  font-weight: 400;
+  word-spacing: -15px;
+  text-align: center;
+}
