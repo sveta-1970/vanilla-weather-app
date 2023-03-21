@@ -27,7 +27,6 @@ function formatDate(timestamp) {
 //display the city name on the page after the user submits the form
 //and the current temperature of the city.
 function displayWeather(response) {
-  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector(".weather").innerHTML = response.data.weather[0].main;
   document.querySelector(".humidity").innerHTML = response.data.main.humidity;
