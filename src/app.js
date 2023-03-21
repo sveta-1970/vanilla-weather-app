@@ -39,6 +39,15 @@ function displayWeather(response) {
   document.querySelector(".day").innerHTML = formatDate(
     response.data.dt * 1000
   );
+  document
+    .querySelector(".icon")
+    .setAttribute(
+      "src",
+      `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+  document
+    .querySelector(".icon")
+    .setAttribute("alt", response.data.weather[0].description);
 }
 
 function searchCity(city) {

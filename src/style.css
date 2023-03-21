@@ -93,9 +93,10 @@ small > a:hover {
 .second div:nth-child(3) {
   text-align: right;
 }
-.cloud-icon {
+.icon {
   font-size: 70px;
   margin-right: 10px;
+  margin-bottom: 30px;
 }
 
 .units {
