@@ -1,7 +1,33 @@
+//function to calculate current date
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  let formatted_date = `${day}, ${hours}:${minutes}`;
+  return formatted_date;
+}
+
 //search engine, when searching for a city,
 //display the city name on the page after the user submits the form
 //and the current temperature of the city.
 function displayWeather(response) {
+  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector(".weather").innerHTML = response.data.weather[0].main;
   document.querySelector(".humidity").innerHTML = response.data.main.humidity;
@@ -10,6 +36,9 @@ function displayWeather(response) {
   );
   document.querySelector("#main-temperature").innerHTML = Math.round(
     response.data.main.temp
+  );
+  document.querySelector(".day").innerHTML = formatDate(
+    response.data.dt * 1000
   );
 }
 
