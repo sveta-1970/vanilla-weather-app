@@ -13,7 +13,7 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
-          <form id="search-form">
+          <form id="search-form" class="mb-5">
             <div class="row first">
               <div class="col-8">
                 <input
@@ -21,6 +21,7 @@
                   class="form-control type-city"
                   placeholder="Type a city"
                   autofocus="on"
+                  autocomplete="off"
                   id="city-input"
                 />
               </div>
@@ -37,19 +38,19 @@
             </div>
           </form>
           <h1 id="city"></h1>
-          <div class="row second">
+          <div class="row second mb-4">
             <div class="col-3">
               <ul>
                 <li>Last updated:<br> <span class="day"></span></li>
                 <li class="weather"></li>
               </ul>
             </div>
-            <div class="col-6">
+            <div class="col-6 weather-temperature">
               <!--<i class="fa-solid fa-cloud icon main"></i>-->
               <img class="icon" src="" alt="icon">
               <span class="temperature" id="main-temperature"></span>
               <span class="units">
-                <a href="#" id="celsius-link">°C</a> |
+                <a href="#" id="celsius-link" class="active">°C</a> |
                 <a href="#" id="farenheit-link">°F</a>
               </span>
             </div>
