@@ -38,7 +38,7 @@
             </div>
           </form>
           <h1 id="city"></h1>
-          <div class="row second mb-4">
+          <div class="row second">
             <div class="col-3">
               <ul>
                 <li>Last updated:<br> <span class="day"></span></li>
@@ -46,7 +46,6 @@
               </ul>
             </div>
             <div class="col-6 weather-temperature">
-              <!--<i class="fa-solid fa-cloud icon main"></i>-->
               <img class="icon" src="" alt="icon">
               <span class="temperature" id="main-temperature"></span>
               <span class="units">
@@ -56,50 +55,22 @@
             </div>
             <div class="col-3">
               <ul class="city-weather">
-                <!--
-                <li>Rain: <span class="rain"></span>%</li>
-                -->
                 <li>Humidity: <span class="humidity"></span>%</li>
                 <li>Wind: <span class="wind"></span> km/h</li>
               </ul>
             </div>
           </div>
-          <div class="row third">
+          <div class="row third weather-forecast">
             <div class="col">
-              <p>Sat</p>
-              <p>
-                <i class="fa-solid fa-cloud-sun"></i>
+              <p class="weather-forecast-date">Sat</p>
+              <p class="weather-forecast-icon">
+                <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="">             
               </p>
-              <p><b>-2°</b> -6°</p>
+              <p class="weather-forecast-temperature">
+                <span class="weather-forecast-temperature-max">-2°</span>
+                <span class="weather-forecast-temperature-min">-6°</span>
             </div>
-            <div class="col">
-              <p>Sun</p>
-              <p>
-                <i class="fa-solid fa-cloud-sun-rain"></i>
-              </p>
-              <p><b>-1°</b> -3°</p>
-            </div>
-            <div class="col">
-              <p>Mon</p>
-              <p>
-                <i class="fa-solid fa-cloud-sun"></i>
-              </p>
-              <p><b>3°</b> -1°</p>
-            </div>
-            <div class="col">
-              <p>Tue</p>
-              <p>
-                <i class="fa-solid fa-cloud"></i>
-              </p>
-              <p><b>2°</b> 2°</p>
-            </div>
-            <div class="col">
-              <p>Wed</p>
-              <p>
-                <i class="fa-solid fa-sun"></i>
-              </p>
-              <p><b>3°</b> 1°</p>
-            </div>
+            
           </div>
         </div>
         <small>

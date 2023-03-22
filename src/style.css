@@ -89,9 +89,9 @@ small > a:hover {
   text-align: right;
 }
 .weather-temperature .icon {
-  font-size: 70px;
+  width: 140px;
   margin-right: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .weather-temperature .units {
@@ -111,14 +111,25 @@ small > a:hover {
 .weather-temperature .active:hover {
   text-decoration: none;
 }
-.third p {
+.weather-forecast-date,
+.weather-forecast-temperature {
   text-align: center;
   line-height: 32px;
   margin-bottom: 0;
+  color: #f8f59b;
 }
-.third i {
-  font-size: 40px;
+.weather-forecast-temperature-max {
+  font-weight: bold;
 }
+
+.weather-forecast-icon {
+  margin-bottom: 0;
+  text-align: center;
+}
+.weather-forecast-icon img {
+  width: 80px;
+}
+
 #main-temperature {
   font-size: 70px;
   font-weight: 400;
