@@ -39,7 +39,7 @@ small > a:hover {
   );
 }
 
-.first {
+.weather-search-form {
   padding-left: 15px;
 }
 
@@ -66,26 +66,26 @@ small > a:hover {
   border: none;
 }
 
-.first div:nth-child(1),
-.second > div,
-.third > div {
+.weather-search-form div:nth-child(1),
+.weather-today > div,
+.weather-forecast > div {
   padding: 0;
 }
 
-.first div:nth-child(2) {
+.weather-search-form div:nth-child(2) {
   text-align: right;
 }
-.first div:nth-child(3) {
+.weather-search-form div:nth-child(3) {
   text-align: center;
 }
 
-.second {
+.weather-today {
   align-items: center;
   padding: 0 15px;
 }
 
-.second div:nth-child(2),
-.second div:nth-child(3) {
+.weather-today div:nth-child(2),
+.weather-today div:nth-child(3) {
   text-align: right;
 }
 .weather-temperature .icon {

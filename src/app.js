@@ -23,6 +23,28 @@ function formatDate(timestamp) {
   return formatted_date;
 }
 
+//forecast
+function displayForecast(){
+  let forecastElement = document.querySelector("#weather-forecast");
+  let forecastHTML = "";
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
+  days.forEach(function(day) {
+    forecastHTML =  forecastHTML + `
+            <div class="col">
+              <p class="weather-forecast-date">${day}</p>
+              <p class="weather-forecast-icon">
+                <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="">             
+              </p>
+              <p class="weather-forecast-temperature">
+                <span class="weather-forecast-temperature-max">-2°</span>
+                <span class="weather-forecast-temperature-min">-6°</span>
+            </div>
+            `;
+  });
+  
+  forecastElement.innerHTML = forecastHTML;
+}
+
 //search engine, when searching for a city,
 //display the city name on the page after the user submits the form
 //and the current temperature of the city.
@@ -49,7 +71,7 @@ function displayWeather(response) {
     .querySelector(".icon")
     .setAttribute("alt", response.data.weather[0].description);
 
-  celsiusTemperature = Math.round(response.data.main.temp);
+    celsiusTemperature = Math.round(response.data.main.temp);
 }
 
 function searchCity(city) {
@@ -94,6 +116,7 @@ function convertFarenheitToCelsius(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 searchCity("Kyiv");
+displayForecast();
 
 let celsiusTemperature = null;
 
