@@ -23,26 +23,45 @@ function formatDate(timestamp) {
   return formatted_date;
 }
 
-//forecast
+//function to calculate day for forecaast
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat",
+  ];
+  return days[day];
+}
+
+//forecast, index=0 is a current day
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#weather-forecast");
   let forecastHTML = "";
-  let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay, index) {
+    if (index > 0 && index < 7) {
+
     forecastHTML =
       forecastHTML +
       `
             <div class="col">
-              <p class="weather-forecast-date">${day}</p>
+              <p class="weather-forecast-date">${formatDay(forecastDay.dt)}</p>
               <p class="weather-forecast-icon">
-                <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="">             
+                <img src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}.png" alt="">             
               </p>
               <p class="weather-forecast-temperature">
-                <span class="weather-forecast-temperature-max">-2°</span>
-                <span class="weather-forecast-temperature-min">-6°</span>
+                <span class="weather-forecast-temperature-max">${Math.round(forecastDay.temp.max)}°</span>
+                <span class="weather-forecast-temperature-min">${Math.round(forecastDay.temp.min)}°</span>
             </div>
             `;
+     }       
   });
 
   forecastElement.innerHTML = forecastHTML;
@@ -51,8 +70,7 @@ function displayForecast(response) {
 function getForecast(coordinates) {
   let apiKey = "c8a77112b2faf6684bb4b21a0aa778ae";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
-
+  
   axios.get(apiUrl).then(displayForecast);
 }
 
