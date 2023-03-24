@@ -24,12 +24,15 @@ function formatDate(timestamp) {
 }
 
 //forecast
-function displayForecast(){
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#weather-forecast");
   let forecastHTML = "";
   let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
-  days.forEach(function(day) {
-    forecastHTML =  forecastHTML + `
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
             <div class="col">
               <p class="weather-forecast-date">${day}</p>
               <p class="weather-forecast-icon">
@@ -41,8 +44,16 @@ function displayForecast(){
             </div>
             `;
   });
-  
+
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "c8a77112b2faf6684bb4b21a0aa778ae";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+
+  axios.get(apiUrl).then(displayForecast);
 }
 
 //search engine, when searching for a city,
@@ -71,7 +82,9 @@ function displayWeather(response) {
     .querySelector(".icon")
     .setAttribute("alt", response.data.weather[0].description);
 
-    celsiusTemperature = Math.round(response.data.main.temp);
+  getForecast(response.data.coord);
+
+  celsiusTemperature = Math.round(response.data.main.temp);
 }
 
 function searchCity(city) {
@@ -116,7 +129,6 @@ function convertFarenheitToCelsius(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 searchCity("Kyiv");
-displayForecast();
 
 let celsiusTemperature = null;
 
