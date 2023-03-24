@@ -100,17 +100,6 @@ small > a:hover {
   font-size: 20px;
 }
 
-.weather-temperature .units a {
-  text-decoration: none;
-}
-
-.weather-temperature .active {
-  color: #f8f59b;
-  cursor: default;
-}
-.weather-temperature .active:hover {
-  text-decoration: none;
-}
 .weather-forecast-date,
 .weather-forecast-temperature {
   text-align: center;
