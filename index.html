@@ -13,7 +13,7 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
-          <form id="search-form" class="mb-5">
+          <form id="search-form" class="mb-4">
             <div class="row weather-search-form">
               <div class="col-8">
                 <input
@@ -31,7 +31,7 @@
                 </button>
               </div>
               <div class="col-2">
-                <button class="button-current" type="submit">
+                <button class="button-current" id="button-current" type="submit">
                   <i class="fa-solid fa-location-dot search-icon"></i>
                 </button>
               </div>
@@ -41,19 +41,19 @@
           <div class="row weather-today">
             <div class="col-3">
               <ul>
-                <li>Last updated:<br> <span class="day"></span></li>
-                <li class="weather"></li>
+                <li>Last updated:<br> <span class="day" id="day"></span></li>
+                <li class="weather" id="weather"></li>
               </ul>
             </div>
             <div class="col-6 weather-temperature">
-              <img class="icon" src="" alt="icon">
+              <img class="icon" id="icon" src="" alt="icon">
               <span class="temperature" id="main-temperature"></span>
               <span class="units">°C</span>
             </div>
             <div class="col-3">
               <ul class="city-weather">
-                <li>Humidity: <span class="humidity"></span>%</li>
-                <li>Wind: <span class="wind"></span> km/h</li>
+                <li>Humidity: <span class="humidity" id="humidity"></span>%</li>
+                <li>Wind: <span class="wind" id="wind"></span> km/h</li>
               </ul>
             </div>
           </div>

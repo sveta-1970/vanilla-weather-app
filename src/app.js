@@ -76,25 +76,25 @@ function getForecast(coordinates) {
 //and the current temperature of the city.
 function displayWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector(".weather").innerHTML = response.data.weather[0].main;
-  document.querySelector(".humidity").innerHTML = response.data.main.humidity;
-  document.querySelector(".wind").innerHTML = Math.round(
+  document.querySelector("#weather").innerHTML = response.data.weather[0].main;
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
   document.querySelector("#main-temperature").innerHTML = Math.round(
     response.data.main.temp
   );
-  document.querySelector(".day").innerHTML = formatDate(
+  document.querySelector("#day").innerHTML = formatDate(
     response.data.dt * 1000
   );
   document
-    .querySelector(".icon")
+    .querySelector("#icon")
     .setAttribute(
       "src",
       `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
   document
-    .querySelector(".icon")
+    .querySelector("#icon")
     .setAttribute("alt", response.data.weather[0].description);
 
   getForecast(response.data.coord);
@@ -117,6 +117,23 @@ function handleSubmit(event) {
   }
 }
 
+//engine for current position
+
+function searchLocation(position) {
+  let apiKey = "52b789a53d83895c9bd9e318a67b4fa8";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayWeather);
+}
+
+function getCurrentPosition(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 searchCity("Kyiv");
+
+let currentPositionButton = document.querySelector("#button-current");
+currentPositionButton.addEventListener("click", getCurrentPosition);

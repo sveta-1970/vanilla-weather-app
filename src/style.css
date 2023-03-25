@@ -2,6 +2,7 @@ body {
   height: 100vh;
   padding: 0;
   margin: 0;
+  background-image: url(../images/20200911_063857_1.jpg);
 }
 h1 {
   font-size: 45px;
@@ -14,16 +15,18 @@ ul {
 
 small {
   font-size: smaller;
+  color: #f8f59b;
 }
 small > a {
   text-decoration: none;
 }
 small > a:hover {
   text-decoration: underline;
+  color: #f8f59b;
 }
 
 .weather-app-wrapper {
-  margin: 20px auto;
+  margin: 50px auto;
   max-width: 650px;
 }
 
@@ -91,7 +94,14 @@ small > a:hover {
 .weather-temperature .icon {
   width: 140px;
   margin-right: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+}
+
+#main-temperature {
+  font-size: 60px;
+  font-weight: 400;
+  word-spacing: -15px;
+  text-align: center;
 }
 
 .weather-temperature .units {
@@ -117,11 +127,4 @@ small > a:hover {
 }
 .weather-forecast-icon img {
   width: 80px;
-}
-
-#main-temperature {
-  font-size: 70px;
-  font-weight: 400;
-  word-spacing: -15px;
-  text-align: center;
 }
