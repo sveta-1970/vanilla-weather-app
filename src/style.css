@@ -13,6 +13,10 @@ ul {
   padding: 0;
 }
 
+li:first-letter {
+  text-transform: capitalize;
+}
+
 small {
   font-size: smaller;
   color: #f8f59b;
