@@ -3,6 +3,7 @@ body {
   padding: 0;
   margin: 0;
   background-image: url(../images/20200911_063857_1.jpg);
+  background-size: cover;
 }
 h1 {
   font-size: 45px;
@@ -80,7 +81,7 @@ small > a:hover {
 }
 
 .weather-search-form div:nth-child(2) {
-  text-align: right;
+  text-align: center;
 }
 .weather-search-form div:nth-child(3) {
   text-align: center;
@@ -91,7 +92,10 @@ small > a:hover {
   padding: 0 15px;
 }
 
-.weather-today div:nth-child(2),
+.weather-today div:nth-child(2) {
+  text-align: center;
+}
+
 .weather-today div:nth-child(3) {
   text-align: right;
 }
